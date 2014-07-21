@@ -80,6 +80,8 @@ group :development, :test do
   gem 'capybara', '~> 2.2'
   gem 'poltergeist', '~> 1.5'
   gem 'selenium-webdriver', '~> 2.42.0'
+  
+  gem 'database_cleaner', '~> 1.3.0'
 
   gem 'rspec', '~> 2.14'
   gem 'rspec-rails', '~> 2.14'
@@ -104,6 +106,7 @@ end
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt-ruby', '~> 3.1.5', :require => 'bcrypt'
 
 # Use unicorn as the app server
 # gem 'unicorn'

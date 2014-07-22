@@ -1,0 +1,17 @@
+#content
+	= form_tag sessions_path do
+		%span
+			%p
+				= label_tag :email
+				%br/
+				= text_field_tag :email, params[:email]
+				%br/
+			%p
+				= label_tag :password
+				%br/
+				= text_field_tag :password, params[:password]
+				%br/
+		%span
+			%p.button
+				= submit_tag "Log in"
+				

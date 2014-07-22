@@ -11,20 +11,34 @@
 	%link{:rel => "stylesheet", :type => "text/css", :href => "http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"}
 %body
 	%header
-		%hgroup
-		%h1 
-			=link_to "Core Blogs", {:action => "index",  :controller => "blogs", :method => :get}
-			#user_nav
-				- if current_user
-					%span
-						Logged in as #{current_user.email}.
-						= link_to "Log out", logout_path
-				- else
-					%span
-						= link_to "Sign up", signup_path
-						= link_to "log in", login_path
-			- flash.each do |name, msg|
-				= content_tag :div, msg, :id => "flash_#{name}"
+		.navbar.navbar-fixed-top
+			.navbar-inner
+				.container
+					%ul.nav
+						%li
+							%h4
+								=link_to "Core Blogs", {:action => "index",  :controller => "blogs", :method => :get}
+						%li.dropdown
+							%ul.dropdown-menu
+								- if current_user
+									%li
+										%span
+											%strong
+												Logged in as #{current_user.email}
+									%li
+										%span
+											= link_to "Log out", logout_path
+								- else
+									%li
+										%span
+											= link_to "Sign up", signup_path
+									%li
+										%span
+											= link_to "log in", login_path
+						- flash.each do |name, msg|
+							%h4
+								%li
+									= content_tag :div, msg, :id => "flash_#{name}"
 	=yield
 				
 				

@@ -24,7 +24,11 @@ group :assets do
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', '~> 0.12.1', platform: :ruby
   gem 'uglifier', '~> 2.5.3'
+  gem "less-rails"
 end
+
+gem 'bower-rails', '~> 0.8.2'
+# gem 'bundler-bower', '~> 0.0.2'
 
 gem 'haml-rails', '~> 0.5.3'
 

@@ -11,15 +11,23 @@
 	%link{:rel => "stylesheet", :type => "text/css", :href => "http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"}
 %body
 	%header
-		.navbar.navbar-fixed-top
-			.navbar-inner
-				.container
-					%ul.nav
-						%li
+		%nav.navbar.navbar-default{:role => "navigation"}
+			.container-fluid
+				#bs-example-navbar-collapse-1.collapse.navbar-collapse
+					%ul.nav.navbar-nav
+						%li.active
 							%h4
 								=link_to "Core Blogs", {:action => "index",  :controller => "blogs", :method => :get}
+						%li.divider
+						- if current_user
+							%li.active
+							%li.divider
+					%ul.nav.navbar-nav.navbar-right
 						%li.dropdown
-							%ul.dropdown-menu
+							%a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+								Dropdown
+								%span.caret
+							%ul.dropdown-menu{:role => "menu"}
 								- if current_user
 									%li
 										%span
@@ -35,10 +43,17 @@
 									%li
 										%span
 											= link_to "log in", login_path
-						- flash.each do |name, msg|
-							%h4
-								%li
-									= content_tag :div, msg, :id => "flash_#{name}"
+				- flash.each do |name, msg|
+					.alert.alert-warning.alert-dismissible{:role => "alert", :id => "flash_#{name}"}
+						%button.close{"data-dismiss" => "alert", :type => "button"}
+							%span{"aria-hidden" => "true"} &times;
+							%span.sr-only Close
+						%strong Warning!
+						= msg
+					
+	
+	
+	
 	=yield
 				
 				

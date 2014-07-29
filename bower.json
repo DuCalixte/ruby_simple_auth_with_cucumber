@@ -1,0 +1,23 @@
+{
+  "name": "ruby_simple_auth_with_cucumber",
+  "version": "0.0.0",
+  "homepage": "https://github.com/DuCalixte/ruby_simple_auth_with_cucumber",
+  "authors": [
+    "Stanley Calixte <DuCalixte@gmail.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "angular": "~1.2.21",
+    "bootstrap": "~3.2.0",
+    "underscore": "~1.6.0"
+  },
+  "description": "Rails application wrapping angularjs",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ]
+}
